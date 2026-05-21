@@ -798,7 +798,7 @@ footer {
 }
 
 /* =========================================
-   RESPONSIVE FIXES (Prevents Horizontal Scroll)
+   RESPONSIVE FIXES 
    ========================================= */
 @media (max-width: 900px) {
     .hero-content {
@@ -836,6 +836,9 @@ footer {
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
+    }
+    .footer-links{
+        font-size: 11px;
     }
 }
 
