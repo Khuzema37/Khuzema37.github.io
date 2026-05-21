@@ -49,7 +49,6 @@ body {
         color 0.4s;
     max-width: 100vw;
     overflow-x: hidden;
-    word-wrap: break-word;
     overflow-wrap: anywhere;
 }
 
@@ -115,7 +114,6 @@ p {
     border: none;
     cursor: pointer;
     transition: var(--transition);
-    text-align: center;
 }
 
 .btn:hover {
@@ -393,6 +391,10 @@ header.scrolled {
     border: 2px dashed var(--primary);
     border-radius: 50%;
     animation: spin 25s linear infinite;
+}
+
+.profile-circle:hover img {
+    transform: scale(1.01);
 }
 
 .profile-circle img {
@@ -756,18 +758,21 @@ footer {
 .footer-content {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 .footer-links {
     display: flex;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
 }
 
-.footer-links a:hover {
-    color: var(--primary);
+.footer-links a {
+    white-space: nowrap;
+    font-size: 0.95rem;
 }
 
 .copyright {
@@ -797,9 +802,7 @@ footer {
     transition-delay: 0.2s;
 }
 
-/* =========================================
-   RESPONSIVE FIXES 
-   ========================================= */
+/* Responsive Breakpoints */
 @media (max-width: 900px) {
     .hero-content {
         grid-template-columns: 1fr;
@@ -836,9 +839,6 @@ footer {
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
-    }
-    .footer-links{
-        font-size: 11px;
     }
 }
 
@@ -905,6 +905,18 @@ footer {
     .form-box {
         padding: 1.5rem;
     }
+
+    /* Footer Mobile Fix */
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .footer-links {
+        gap: 1rem;
+    }
+    .footer-links a {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -935,5 +947,8 @@ footer {
     }
     .contact-list i {
         margin-top: 0;
+    }
+    .footer-links a {
+        font-size: 0.85rem;
     }
 }
