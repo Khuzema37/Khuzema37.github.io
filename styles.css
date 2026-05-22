@@ -945,27 +945,27 @@ footer {
         display: grid;
     }
     
+    /* FIXED: Menu hidden by default */
     .nav-links {
         position: fixed;
         top: 60px;
-        left: 0;
         right: 0;
-        width: 100vw;
-        max-width: 100vw;
+        width: 100%;
         height: calc(100vh - 60px);
         background: var(--card);
         flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 2rem 1rem;
-        transition: right 0.3s ease;
+        transform: translateX(100%); /* Hidden off-screen */
+        transition: transform 0.3s ease;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05);
         overflow-y: auto;
         overflow-x: hidden;
     }
     
     .nav-links.open {
-        right: 0;
+        transform: translateX(0); /* Slide in */
     }
     
     .nav-links a {
